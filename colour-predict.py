@@ -6,6 +6,7 @@ from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import GaussianNB
 import json
 
+
 def plot_generated(wid, hei, a_low, a_high, b_low, b_high, X_grid):
     """
     Plot random subset of the L*A*B colour space
@@ -37,6 +38,7 @@ def plot_predicted(wid, hei, a_low, a_high, b_low, b_high, X_grid, model):
     plt.yticks(np.linspace(0, hei, 5), np.linspace(b_low, b_high, 5))
     plt.imshow(pixels)
 
+
 # rgb codes for representing the predicted labels
 with open("rgb_codes.json", "r") as json_file:
     rgb_codes = json.load(json_file)
@@ -47,6 +49,7 @@ for key, value in rgb_codes.items():
     colour_rgb[key] = rgb_tuple
 
 colour_to_rgb = np.vectorize(colour_rgb.get, otypes=[np.uint8, np.uint8, np.uint8])
+
 
 def main():
     df = pd.read_csv('colour-data.csv') # read-in data
