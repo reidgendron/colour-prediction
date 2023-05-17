@@ -18,6 +18,13 @@ def plot_generated(wid, hei, a_low, a_high, b_low, b_high, X_grid):
 
 
 def main():
+    df = pd.read_csv('colour-data.csv') # read-in data
+    X = df[['red','green','blue']].values / 255  # np array with shape (n, 3) of colour components
+                                        # standardize components so that values are all on 0-1 scale
+    y = df['label'].values # np array with shape (n,) of colour labels
+
+    print(df)
+
     plt.figure(figsize=(10, 5))
     resolution = 256
     wid, hei = resolution, resolution
