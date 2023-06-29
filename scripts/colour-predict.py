@@ -39,25 +39,25 @@ def plot_predicted(wid, hei, a_low, a_high, b_low, b_high, X_grid, model):
     plt.imshow(pixels)
 
 
-# rgb codes for representing the predicted labels
-with open("rgb_codes.json", "r") as json_file:
-    rgb_codes = json.load(json_file)
-
 colour_rgb = {}
-for key, value in rgb_codes.items():
-    rgb_tuple = tuple(np.array(value, dtype=np.uint8))
-    colour_rgb[key] = rgb_tuple
-
 colour_to_rgb = np.vectorize(colour_rgb.get, otypes=[np.uint8, np.uint8, np.uint8])
 
 
 def main():
-    df = pd.read_csv('colour-data.csv') # read-in data
+    df = pd.read_csv('../data/colour-data.csv') # read-in data
     X = df[['red','green','blue']].values / 255  # np array with shape (n, 3) of colour components
                                         # standardize components so that values are all on 0-1 scale
     y = df['label'].values # np array with shape (n,) of colour labels
 
-    # Create a grid of L*A*B colour values
+    # rgb codes for representing the predicted labels
+    with open("../data/rgb_codes.json", "r") as json_file:
+        rgb_codes = json.load(json_file)
+
+    for key, value in rgb_codes.items():
+        rgb_tuple = tuple(np.array(value, dtype=np.uint8))
+        colour_rgb[key] = rgb_tuple
+
+    # Generate a subset of L*A*B colour space
         # L: luminescence (0 to 100)
         # A: greenness to redness (-128 to +127)
         # B: blueness to yellowness (-128 to +127)
@@ -65,7 +65,6 @@ def main():
     plt.figure(figsize=(10, 5))
     resolution = 256
     wid, hei = resolution, resolution
-
     luminescence = 65
     a_low = np.random.randint(-128, 0)
     a_high = np.random.randint(0, 127)
