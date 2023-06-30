@@ -1,14 +1,28 @@
 # Colour Prediction
+
+### Abstract
 This is a small machine learning project in order to classify the colours of the pixels in an image based on a training set of RGB colour codes.
 
-# Dependencies
+<br/>
+
+<img src="output/output.png" align="center" width="1000" height="auto"></img>
+
+<br/>
+
+### Dependencies
 - Python 3.10.9
 - Pandas
 - NumPy
 - Scikit-Learn
 - Matplotlib
 
-# Project Report
+### Test
+- [Results](output/output.png)
+- [Interactive Plot (Test)](output/index.html)
+
+<br/>
+
+# Report
 
 ### Introduction
 The objective of this machine learning project is to classify RGB values into basic labelled colors using a Gaussian classification model. The RGB values represent the intensity of red, green, and blue colors in a pixel. The goal is to predict the basic labelled color category based on the input RGB values.
