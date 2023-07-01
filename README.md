@@ -3,6 +3,11 @@
 ### Abstract
 This is a small machine learning project in order to classify the colours of the pixels in an image based on a training set of RGB colour codes.
 
+### Contents
+- [Notebook](output/colour-predict.html)
+- [Results](output/output.png)
+- [Interactive Plot (Test)](output/interactive.html)
+
 <br/>
 
 <img src="output/output.png" align="center" width="1000" height="auto"></img>
@@ -15,10 +20,6 @@ This is a small machine learning project in order to classify the colours of the
 - NumPy
 - Scikit-Learn
 - Matplotlib
-
-### Test
-- [Results](output/output.png)
-- [Interactive Plot (Test)](output/index.html)
 
 <br/>
 
