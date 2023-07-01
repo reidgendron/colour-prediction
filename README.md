@@ -10,7 +10,7 @@ This is a small machine learning project in order to classify the colours of the
 
 <br/>
 
-<img src="output/output.png" align="center" width="1000" height="auto"></img>
+<img src="output/output.png" align="center" width="1000" height="auto"/>
 
 <br/>
 
