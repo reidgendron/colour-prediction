@@ -6,7 +6,6 @@ This is a small machine learning project in order to classify the colours of the
 ### Contents
 - [Notebook](output/colour-predict.html)
 - [Results](output/output.png)
-- [Interactive Plot (Test)](output/interactive.html)
 
 <br/>
 
